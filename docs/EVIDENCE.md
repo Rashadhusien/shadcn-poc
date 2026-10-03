@@ -26,3 +26,27 @@ Append a dated phase entry with facts only: files and approximate LOC changed; c
 - Verification command: `npm run verify` passed: ESLint, TypeScript app/node checks, Vite 8.3.2 production build (JS 257.85 kB / gzip 81.99 kB; CSS 9.42 kB / gzip 2.58 kB), token-literal scanner. `npm install` printed 7 high severity advisories; a subsequent `npm audit` reported 0 vulnerabilities, so the discrepancy is recorded for follow-up.
 - CLI setup: `shadcn init` confirmed but could not retrieve its preset config from the preset API (`ECONNREFUSED 127.0.0.1:9`). The Nova/Radix/Lucide config was written locally; actual registry component generation is deferred to P05.
 - Manual checks: not performed in browser. Node v22.20.0 and npm 11.6.1.
+
+## Phase 02 — Royal Navy / Opal theme (2026-10-03)
+
+- Owner-directed theme replacement (brass → Royal Navy / Opal) on branch
+  `feat/p02-theme-diagnostix`.
+- Files changed: `src/theme/tokens.json` (full navy/opal token table, 9 charts,
+  Inter/JetBrains Mono stacks); `src/theme/theme.css` (regenerated);
+  `scripts/contrast.mjs` (hue references prior-brass 37° / Kendo teal 186°, navy
+  direction copy); `THEME_PROPOSAL.md` (rewritten direction); `docs/DESIGN_TOKENS.md`
+  (regenerated 110-pair report); `src/features/dev/ThemeCheckPage.tsx` (copy);
+  `docs/DEVIATIONS.md` (DEV-01/02/03); `docs/PARITY_VS_MUI.md` (THEME-01 done);
+  `TASKS.md` (P2.1–P2.4 done); `AI_USAGE_LOG.md` (Phase 02 record).
+- Custom components: none added; ThemeProvider/Switcher unchanged.
+- Libraries: none added (no unapproved installs; Inter/JetBrains Mono packages pending).
+- Config steps: none beyond token source + `npm run theme:build`.
+- Commands/results: `npm run verify` passed — ESLint clean; `tsc` app+node clean; Vite
+  8.3.2 build JS 417.58 kB / gzip 129.85 kB, CSS 41.27 kB / gzip 7.69 kB (growth vs P01
+  from Radix/Sonner/lucide on the theme-check route); token scanner clean;
+  contrast 110/110 pass, hue 223.6°, distances 173.4°/37.6°, max saturation 74.1%.
+- Screenshots/manual checks: not performed in browser (light/dark/system + OS change +
+  all overlays at 360–1536 left for owner).
+- Workarounds: supplied boundary/sidebar/focus/warning values adjusted for gates
+  (DEV-02); hue references repointed after owner overrode the brass direction (DEV-01).
+- Unverified: visual review of the navy theme in browser, both modes and all portals.

@@ -24,6 +24,6 @@ One row per route/screen group, behavior, shared composition, and cross-cutting 
 | OPS-01 | `features/{notifications,settings}/*` | notifications and six settings sections | Tabs, Switch, forms | L | P10 | todo |
 | RPT-01 | `features/reports/*` | reports hub + four report pages and states | Recharts, Calendar, DataTable | XL | P10 | todo |
 | DEMO-01 | `features/showcase/*`, `features/errors/*` | /forms, /grid, Not Found | kit showcase | M | P10 | todo |
-| THEME-01 | `src/theme/tokens.ts`, `ThemeModeSelect.tsx` | Diagnostix tokens, provider, mode controls | CSS variables, html class | L | P02 | todo |
+| THEME-01 | `src/theme/tokens.ts`, `ThemeModeSelect.tsx` | Diagnostix tokens, provider, mode controls | CSS variables, html class | L | P02 | done |
 
 Status: todo → in-progress → done; `verified` only after manual pass; `deviated` links a row in DEVIATIONS.md. Proposed Kendo keyboard board enhancement is not parity-approved yet.

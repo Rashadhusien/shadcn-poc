@@ -12,6 +12,11 @@ Record build/hash, viewport, theme, keyboard/mouse path, expected behavior, obse
 - [x] Owner resolved the OFL-1.1 @fontsource license exception and approved the exact dependency set.
 - [ ] Owner resolves the open parity decisions in PLAN.md.
 
+## Phase 02
+
+- [x] Token source, generated CSS and contrast report updated to Royal Navy / Opal (static gates pass).
+- [ ] Owner manually reviews `/dev/theme-check` in light/dark/system + OS change, opens every overlay (dialog, popover, select, toast), and sweeps 360/768/1024/1536 with no page overflow.
+
 ## Future phases
 
 - [ ] P01: start the Vite app, inspect the Diagnostix placeholder at 360, 768, 1024 and 1536 px; confirm no page overflow and verify `.handoff/`, `.env*`, and license files are ignored.

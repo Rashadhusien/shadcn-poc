@@ -3,12 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#f6f5f1" />
+    <meta name="theme-color" content="" />
     <meta
       name="description"
       content="Diagnostix dental diagnostics workspace"
     />
     <title>Diagnostix</title>
+    <script>
+      ;(() => {
+        let preference = 'system'
+        try {
+          const stored = window.localStorage.getItem('app-theme')
+          if (stored === 'light' || stored === 'dark' || stored === 'system')
+            preference = stored
+        } catch {
+          // Storage may be disabled; system preference is still available.
+        }
+        const dark =
+          preference === 'dark' ||
+          (preference === 'system' &&
+            window.matchMedia('(prefers-color-scheme: dark)').matches)
+        const theme = dark ? 'dark' : 'light'
+        document.documentElement.classList.toggle('dark', dark)
+        document.documentElement.dataset.theme = theme
+        document.documentElement.style.colorScheme = theme
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>

@@ -51,18 +51,18 @@ Phase gate: verify passes; dependency metadata approved; parity/evidence updated
 
 ## Phase 02: Diagnostix theme
 
-Branch: `feat/p02-theme-diagnostix` | Depends on: P01 | Estimate: 8 h | Status: todo
+Branch: `feat/p02-theme-diagnostix` | Depends on: P01 | Estimate: 8 h | Status: done (verify green; manual browser checks pending owner)
 
 Goal: implement accessible token-driven light/dark/system theme and visible dev review page.
 
-- [ ] P2.1 Create typed token source and deterministic shadcn variable mapping. MUI source: `src/theme/tokens.ts` (shape only). Kendo lesson: tokens only, overlay coverage. shadcn: Tailwind v4 CSS variables. Acceptance: no copied color values across files. Files: `src/theme/tokens.ts`, `src/theme/theme.css`, `scripts/build-theme-css.mjs`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P2.2 Contrast checker and full token table. MUI source: `docs/DESIGN_TOKENS.md`. Kendo lesson: verify all text, borders, badges, chart colors and focus. shadcn: dependency-free Node script. Acceptance: checks AA pairs and exits non-zero for a planted bad color. Files: `scripts/contrast.mjs`, `docs/DESIGN_TOKENS.md`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P2.3 Self-host fonts and build ThemeProvider/Switcher. MUI source: `src/app/providers.tsx`, `components/basic/ThemeModeSelect.tsx`. Kendo lesson: prepaint and System subscription. shadcn: html class, local fonts. Acceptance: persists `app-theme`, no flash, reacts to OS; portals inherit. Files: `index.html`, `src/main.tsx`, `src/theme/ThemeProvider.tsx`, `src/theme/ThemeSwitcher.tsx`, `src/theme/fonts.css`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P2.4 Theme check page, including portaled controls and charts. MUI source: MUI shared kit. Kendo lesson: dark-mode portal regressions. shadcn: dev route, Radix, Sonner. Acceptance: every planned primitive inspected in both modes. Files: `src/features/dev/ThemeCheckPage.tsx`, `src/app/router.tsx`, `docs/EVIDENCE_CHECKLIST.md`.
-  - [ ] AI_USAGE_LOG.md updated
+- [x] P2.1 Create typed token source and deterministic shadcn variable mapping. MUI source: `src/theme/tokens.ts` (shape only). Kendo lesson: tokens only, overlay coverage. shadcn: Tailwind v4 CSS variables. Acceptance: no copied color values across files. Files: `src/theme/tokens.ts`, `src/theme/theme.css`, `scripts/build-theme-css.mjs`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P2.2 Contrast checker and full token table. MUI source: `docs/DESIGN_TOKENS.md`. Kendo lesson: verify all text, borders, badges, chart colors and focus. shadcn: dependency-free Node script. Acceptance: checks AA pairs and exits non-zero for a planted bad color. Files: `scripts/contrast.mjs`, `docs/DESIGN_TOKENS.md`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P2.3 Self-host fonts and build ThemeProvider/Switcher. MUI source: `src/app/providers.tsx`, `components/basic/ThemeModeSelect.tsx`. Kendo lesson: prepaint and System subscription. shadcn: html class, local fonts. Acceptance: persists `app-theme`, no flash, reacts to OS; portals inherit. Files: `index.html`, `src/main.tsx`, `src/theme/ThemeProvider.tsx`, `src/theme/ThemeSwitcher.tsx`, `src/theme/fonts.css`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P2.4 Theme check page, including portaled controls and charts. MUI source: MUI shared kit. Kendo lesson: dark-mode portal regressions. shadcn: dev route, Radix, Sonner. Acceptance: every planned primitive inspected in both modes. Files: `src/features/dev/ThemeCheckPage.tsx`, `src/app/router.tsx`, `docs/EVIDENCE_CHECKLIST.md`.
+  - [x] AI_USAGE_LOG.md updated
 
 Phase gate: verify and contrast pass; manual light/dark/system + OS change + all overlays; parity/evidence updated.
 
