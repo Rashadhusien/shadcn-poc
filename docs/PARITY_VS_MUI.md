@@ -9,10 +9,10 @@ One row per route/screen group, behavior, shared composition, and cross-cutting 
 | CORE-02 | `src/hooks/useTableControls.ts`, `useTabParam.ts` | same URL table/tab state | React Router hooks | M | P03 | done |
 | SHELL-01 | `src/app/router.tsx`, `components/layout/*` | guarded SPA, lazy routes, responsive shell | React Router, Sidebar, Sheet, ErrorBoundary | L | P04 | done |
 | SHELL-02 | `components/layout/Header.tsx`, `GlobalSearch.tsx` | search command palette + routes/order lookup | Command/cmdk, Dialog | M | P04 | done |
-| KIT-01 | `components/basic/*`, `business/*` | shared StatusBadge, indicators, cards | shadcn Badge, lucide-react | M | P05 | todo |
-| KIT-02 | `components/data-display/ResponsiveDataTable.tsx` | shared responsive DataTable and mobile cards | TanStack Table, shadcn Table | XL | P05 | todo |
-| KIT-03 | `components/composite/ConfirmDialog.tsx`, feedback | confirm, toast, loading/empty/error | AlertDialog, Sonner, Skeleton | M | P05 | todo |
-| KIT-04 | `components/charts/*` | token-aware charts and table views | Recharts / shadcn chart | M | P05 | todo |
+| KIT-01 | `components/basic/*`, `business/*` | shared StatusBadge, indicators, cards | shadcn Badge, lucide-react | M | P05 | done |
+| KIT-02 | `components/data-display/ResponsiveDataTable.tsx` | shared responsive DataTable and mobile cards | TanStack Table, shadcn Table | XL | P05 | done |
+| KIT-03 | `components/composite/ConfirmDialog.tsx`, feedback | confirm, toast, loading/empty/error | AlertDialog, Sonner, Skeleton | M | P05 | done |
+| KIT-04 | `components/charts/*` | token-aware charts and table views | Recharts / shadcn chart | M | P05 | done |
 | AUTH-01 | `features/auth/LoginPage.tsx` | mock sign-in and return route | RHF, Zod, shadcn Form | M | P04 | done |
 | ORD-01 | `features/orders/list/*` | orders search/filter/sort/page/select/columns/actions | DataTable, URL state | XL | P06 | todo |
 | DASH-01 | `features/dashboard/DashboardPage.tsx` | KPIs, alert, charts, recent orders, activity | chart wrapper, DataTable | L | P07 | todo |

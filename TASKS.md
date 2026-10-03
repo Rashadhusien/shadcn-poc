@@ -98,16 +98,16 @@ Phase gate: verify and shell route smoke; manual 360/768/1024/1536 + keyboard/si
 
 ## Phase 05: Component kit
 
-Branch: `feat/p05-component-kit` | Depends on: P02, P04 | Estimate: 12 h | Status: todo
+Branch: `feat/p05-component-kit` | Depends on: P02, P04 | Estimate: 12 h | Status: done (verify green; manual component inspection pending owner)
 
 Goal: establish tested-by-inspection reusable product compositions without page-specific duplicates.
 
-- [ ] P5.1 Add shadcn registry primitives used by the app; add icon, status and confirmation compositions. MUI source: `components/basic`, `components/composite`. Kendo lesson: no mixed icons; confirm destructive actions. shadcn: Button, Badge, Input, Select, Dialog, AlertDialog, Tabs, Tooltip. Acceptance: focus/keyboard/theme documented. Files: `src/components/ui/**`, `src/components/app/StatusBadge.tsx`, `src/components/app/ConfirmDialog.tsx`, `docs/PARITY_VS_MUI.md`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P5.2 Build DataTable and feedback patterns. MUI source: `components/data-display/*`, `components/feedback/*`. Kendo lesson: mobile fallback, all data states, no untracked resize. shadcn: TanStack Table, Skeleton, Sonner. Acceptance: sort/page/select/visibility, card fallback below 768, loading/empty/error+Retry. Files: `src/components/app/DataTable.tsx`, `DataTableCards.tsx`, `DataTableStates.tsx`, `FeedbackStates.tsx`, `ToastProvider.tsx`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P5.3 Build chart wrapper and form primitives. MUI source: `components/charts/*`, validation forms. Kendo lesson: charts must follow tokens; avoid unused deps. shadcn: Recharts, RHF/Zod. Acceptance: theme-change colors, accessible table alternative and MUI message parity. Files: `src/components/app/charts/*`, `src/components/app/forms/*`, `docs/DEVIATIONS.md`.
-  - [ ] AI_USAGE_LOG.md updated
+- [x] P5.1 Add shadcn registry primitives used by the app; add icon, status and confirmation compositions. MUI source: `components/basic`, `components/composite`. Kendo lesson: no mixed icons; confirm destructive actions. shadcn: Button, Badge, Input, Select, Dialog, AlertDialog, Tabs, Tooltip. Acceptance: focus/keyboard/theme documented. Files: `src/components/ui/**`, `src/components/app/StatusBadge.tsx`, `src/components/app/ConfirmDialog.tsx`, `docs/PARITY_VS_MUI.md`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P5.2 Build DataTable and feedback patterns. MUI source: `components/data-display/*`, `components/feedback/*`. Kendo lesson: mobile fallback, all data states, no untracked resize. shadcn: TanStack Table, Skeleton, Sonner. Acceptance: sort/page/select/visibility, card fallback below 768, loading/empty/error+Retry. Files: `src/components/app/DataTable.tsx`, `DataTableCards.tsx`, `DataTableStates.tsx`, `FeedbackStates.tsx`, `ToastProvider.tsx`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P5.3 Build chart wrapper and form primitives. MUI source: `components/charts/*`, validation forms. Kendo lesson: charts must follow tokens; avoid unused deps. shadcn: Recharts, RHF/Zod. Acceptance: theme-change colors, accessible table alternative and MUI message parity. Files: `src/components/app/charts/*`, `src/components/app/forms/*`, `docs/DEVIATIONS.md`.
+  - [x] AI_USAGE_LOG.md updated
 
 Phase gate: verify; component pages in both themes; manually inspect focus, portal, table card, chart and toast.
 

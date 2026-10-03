@@ -28,6 +28,12 @@ Record build/hash, viewport, theme, keyboard/mouse path, expected behavior, obse
 - [x] Production build emits lazy route chunks: LoginPage, ThemeCheckPage, NotFoundPage, StubPage split from the main bundle.
 - [ ] Owner verifies at 360/768/1024/1536: drawer / rail / full sidebar, overlay focus trap + Esc, Cmd/Ctrl+K palette with order lookup, sign-in/out with deep-link return, keyboard-only sidebar + menus.
 
+## Phase 05
+
+- [ ] Owner inspects each kit piece in light + dark on `/dev/theme-check` successors and records focus, keyboard, portal, table-card, chart and toast behavior (no automated tests per plan).
+
+## Future phases
+
 ## Future phases
 
 ## Future phases

@@ -103,3 +103,26 @@ Append a dated phase entry with facts only: files and approximate LOC changed; c
 - Screenshots/manual checks: responsive sweep, keyboard walkthrough, sign-in/out and
   palette operation left for owner per `docs/EVIDENCE_CHECKLIST.md`.
 - Unverified: browser rendering of shell in both modes; overlay focus behavior.
+
+## Phase 05 — Component kit (2026-10-03)
+
+- Branch `feat/p05-component-kit`, based on `main` at P04 commit.
+- Installed approved P05 pins (62 packages added): 8 Radix primitives, `@tanstack/react-table`
+  9.2.4, `recharts` 3.10.1, `sonner` 2.0.8, `react-hook-form` 7.89.0, `zod` 4.6.5,
+  `@hookform/resolvers` 5.9.1, `react-day-picker` 10.0.2, `date-fns` 4.4.0. `npm install`
+  printed 7 high severity advisories (same pattern as P01; follow-up at P12 licensing).
+- New `src/components/ui/` (15 owned primitives: button, badge, input, label, textarea,
+  select, dialog, alert-dialog, tabs, tooltip, separator, checkbox, switch, dropdown-menu,
+  skeleton) + `src/components/app/` (StatusBadge icon+label per domain/status, ConfirmDialog
+  on AlertDialog with loading-blocked Esc, FeedbackStates, ToastProvider mounted in
+  `main.tsx`, DataTableStates, DataTableCards with details dialog, TanStack DataTable with
+  toolbar/pager/visibility menu/row actions/detail list, charts ChartCard/Bar/Donut +
+  useSeriesColors, forms Field/FormTextField/FormSelect).
+- DataTable keeps domain `sortRows`/`paginateRows`/`clampPage` authoritative and the
+  `useTableControls` contract; TanStack owns model/selection/visibility. Deltas: DEV-06
+  (v9 legacy layer + RowData boundary casts), DEV-07 (no autoFocus prop).
+- Commands/results: `npm run verify` passed — ESLint clean; `tsc` clean (fixed v9 export
+  names, RowData constraint, duplicate block); build green (main 608.8 kB, CSS 55.7 kB);
+  token scanner clean; seed 13/13; contrast 110/110.
+- Manual component inspection left for owner (no tests per plan).
+- Unverified: kit rendering in browser both modes; chart theme-switch with Recharts mounted.

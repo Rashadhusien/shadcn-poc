@@ -109,3 +109,26 @@ Factual record of AI-assisted work. Do not include credentials, tokens, or patie
   Manual responsive/keyboard/sign-in checks left for owner.
 - Limitation: stub screens until their phases; notifications/settings routes resolve to
   stubs; no new dependencies.
+
+## Phase 05 — Component kit (2026-10-03)
+
+### Task records
+
+- Date: 2026-10-03; tool/model: Codex (desktop agent).
+- Standing branch permission; branch `feat/p05-component-kit` from `main`.
+- Installed approved P05 pins from the Gate 0 matrix (Radix ×8, TanStack Table, Recharts,
+  Sonner, RHF/Zod/resolvers, day-picker/date-fns). No unapproved packages.
+- P5.1 — 15 locally owned `ui/` primitives (cva + Radix + tokens, no color literals) plus
+  `StatusBadge` (domain/status mapping, icon+label, sm/md/loading) and `ConfirmDialog`
+  (AlertDialog, destructive variant, loading blocks Esc).
+- P5.2 — TanStack `DataTable` (controlled sort/page/select/visibility over
+  `useTableControls`, `aria-sort`, page-scoped select-all, expandable details, cards +
+  dialog below 768, toolbar/pager/visibility/row-actions/detail-list), `DataTableCards`,
+  `DataTableStates`, `FeedbackStates`, Sonner `ToastProvider` mounted in `main.tsx`.
+- P5.3 — Token-driven Recharts `ChartCard` (chart/table toggle + states), Bar + Donut
+  views, `useSeriesColors`; RHF-ready `Field`/`FormTextField`/`FormSelect` with MUI
+  message parity via domain-owned errors.
+- Verification: `npm run verify` green (lint, typecheck incl. v9 API fixes, build, token,
+  seed, contrast). Manual kit inspection left for owner.
+- Limitation: kit unwired to feature screens until P06+; recharts not yet routed (main
+  bundle excludes it); day-picker/date-fns unused until P10.
