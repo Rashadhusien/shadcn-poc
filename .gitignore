@@ -1,0 +1,10 @@
+# Generated output and package installs
+node_modules/
+dist/
+
+# Local secrets, licences, and generated phase handoffs
+.env*
+*.lic
+*license*.txt
+*licence*.txt
+.handoff/
