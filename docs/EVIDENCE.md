@@ -78,3 +78,28 @@ Append a dated phase entry with facts only: files and approximate LOC changed; c
 - Screenshots/manual checks: not performed (`?sim=` mode matrix left for owner per
   `docs/EVIDENCE_CHECKLIST.md`).
 - Unverified: runtime data loading in browser (provider now mounted in dev).
+
+## Phase 04 — App shell (2026-10-03)
+
+- Branch `feat/p04-app-shell`, based on `main` at P03 commit.
+- New: `src/app/router.tsx` (full 30-route baseline map, all routes lazy with per-route
+  error boundary that resets on navigation, stub pages for P06–P10), `src/app/AuthBoundary.tsx`
+  (deep-link return via location state), `src/app/RouteErrorBoundary.tsx`,
+  `src/app/AppShell.tsx` (matchMedia desktop subscription, remembered collapse, single
+  sidebar instance), `src/layout/` (navigation, Sidebar full/rail/overlay, Header,
+  CommandPalette, NotificationsMenu, UserMenu, AppBreadcrumbs, SkipLink, DataStatusBar,
+  AuthLayout), `src/components/app/PageHeader.tsx`, `src/features/auth/LoginPage.tsx`
+  (same validation/messages/800ms/remember/return behavior as MUI, controlled inputs —
+  RHF adoption at P09), `src/features/errors/NotFoundPage.tsx`, `src/features/stubs/StubPage.tsx`.
+- No new dependencies (Radix Dialog/Popover/Select + lucide already approved); cmdk not
+  installed — palette is a Radix Dialog composition (DEV-05). No shadcn registry
+  primitives yet (P05).
+- Deltas recorded: DEV-04 (Diagnostix wordmark), DEV-05 (palette-on-mobile, solid panel).
+- Commands/results: `npm run verify` passed — ESLint clean (fixed label association and
+  two set-state-in-effect cases by moving resets into event handlers); `tsc` clean; Vite
+  build with lazy chunks (LoginPage 6.3 kB, NotFound 1.1 kB, Stub 0.5 kB, ThemeCheck 80.7 kB,
+  main 575.9 kB); token scanner clean; seed 13/13; contrast 110/110. Dev-server smoke:
+  `/`, `/login`, `/dashboard`, `/orders`, `/does-not-exist`, `/dev/theme-check` → 200.
+- Screenshots/manual checks: responsive sweep, keyboard walkthrough, sign-in/out and
+  palette operation left for owner per `docs/EVIDENCE_CHECKLIST.md`.
+- Unverified: browser rendering of shell in both modes; overlay focus behavior.

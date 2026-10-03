@@ -83,16 +83,16 @@ Phase gate: verify, seed check and parity; manual normal/loading/empty/error sim
 
 ## Phase 04: App shell
 
-Branch: `feat/p04-app-shell` | Depends on: P02, P03 | Estimate: 8 h | Status: todo
+Branch: `feat/p04-app-shell` | Depends on: P02, P03 | Estimate: 8 h | Status: done (verify green incl. route smoke; manual responsive/keyboard checks pending owner)
 
 Goal: implement protected route shell, responsive navigation, shared headers and real global command search.
 
-- [ ] P4.1 Router, auth boundary, lazy route modules, per-route error boundary and Not Found. MUI source: `src/app/router.tsx`, `AuthBoundary.tsx`, `features/errors/*`. Kendo lesson: avoid eager route bundle. shadcn: React Router, ErrorBoundary. Acceptance: baseline route map resolves; signed-out redirect retains destination. Files: `src/app/router.tsx`, `src/app/routes.ts`, `src/app/AuthBoundary.tsx`, `src/app/RouteErrorBoundary.tsx`, `src/features/errors/NotFoundPage.tsx`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P4.2 Sidebar/header/breadcrumbs/PageHeader and responsive modes. MUI source: `src/components/layout/*`. Kendo lesson: one page heading; avoid resize listeners. shadcn: Sidebar, Sheet, Breadcrumb. Acceptance: persistent ≥1024, rail 768–1023, drawer <768. Files: `src/layout/*`, `src/components/app/PageHeader.tsx`, `src/app/AppShell.tsx`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P4.3 Login, user/notification menu, theme switch, command palette. MUI source: `features/auth/LoginPage.tsx`, `GlobalSearch.tsx`, header menus. Kendo lesson: single icon set; keyboard operation. shadcn: Command/cmdk, Dialog, lucide. Acceptance: Cmd/Ctrl+K opens; route navigation and order results work; Esc restores focus. Files: `src/features/auth/*`, `src/layout/Header.tsx`, `src/layout/CommandPalette.tsx`, `src/layout/UserMenu.tsx`.
-  - [ ] AI_USAGE_LOG.md updated
+- [x] P4.1 Router, auth boundary, lazy route modules, per-route error boundary and Not Found. MUI source: `src/app/router.tsx`, `AuthBoundary.tsx`, `features/errors/*`. Kendo lesson: avoid eager route bundle. shadcn: React Router, ErrorBoundary. Acceptance: baseline route map resolves; signed-out redirect retains destination. Files: `src/app/router.tsx`, `src/app/routes.ts`, `src/app/AuthBoundary.tsx`, `src/app/RouteErrorBoundary.tsx`, `src/features/errors/NotFoundPage.tsx`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P4.2 Sidebar/header/breadcrumbs/PageHeader and responsive modes. MUI source: `src/components/layout/*`. Kendo lesson: one page heading; avoid resize listeners. shadcn: Sidebar, Sheet, Breadcrumb. Acceptance: persistent ≥1024, rail 768–1023, drawer <768. Files: `src/layout/*`, `src/components/app/PageHeader.tsx`, `src/app/AppShell.tsx`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P4.3 Login, user/notification menu, theme switch, command palette. MUI source: `features/auth/LoginPage.tsx`, `GlobalSearch.tsx`, header menus. Kendo lesson: single icon set; keyboard operation. shadcn: Command/cmdk, Dialog, lucide. Acceptance: Cmd/Ctrl+K opens; route navigation and order results work; Esc restores focus. Files: `src/features/auth/*`, `src/layout/Header.tsx`, `src/layout/CommandPalette.tsx`, `src/layout/UserMenu.tsx`.
+  - [x] AI_USAGE_LOG.md updated
 
 Phase gate: verify and shell route smoke; manual 360/768/1024/1536 + keyboard/sidebar + sign-in/out.
 

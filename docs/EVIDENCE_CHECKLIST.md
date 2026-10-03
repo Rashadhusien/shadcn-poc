@@ -22,6 +22,14 @@ Record build/hash, viewport, theme, keyboard/mouse path, expected behavior, obse
 - [x] Seed identity: `npm run check:seed` reports 13/13 files identical to `../mui/src/data/seed`.
 - [ ] Owner manually loads `/dev/theme-check` with `?sim=loading` (collections never resolve), `?sim=error` (all collections fail with Retry), `?sim=empty` (all collections empty), and `?sim=error&simTarget=orders` (only orders fail); reload restores normal state.
 
+## Phase 04
+
+- [x] Dev-server route smoke: `/`, `/login`, `/dashboard`, `/orders`, `/does-not-exist`, `/dev/theme-check` all serve 200 (SPA fallback).
+- [x] Production build emits lazy route chunks: LoginPage, ThemeCheckPage, NotFoundPage, StubPage split from the main bundle.
+- [ ] Owner verifies at 360/768/1024/1536: drawer / rail / full sidebar, overlay focus trap + Esc, Cmd/Ctrl+K palette with order lookup, sign-in/out with deep-link return, keyboard-only sidebar + menus.
+
+## Future phases
+
 ## Future phases
 
 - [ ] P01: start the Vite app, inspect the Diagnostix placeholder at 360, 768, 1024 and 1536 px; confirm no page overflow and verify `.handoff/`, `.env*`, and license files are ignored.

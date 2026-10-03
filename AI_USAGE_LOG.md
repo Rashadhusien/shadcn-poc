@@ -85,3 +85,27 @@ Factual record of AI-assisted work. Do not include credentials, tokens, or patie
 - Verification: `npm run verify` (see Phase 03 evidence entry). No browser run performed.
 - Limitation: no UI code; hooks/provider unwired to screens until P04–P06; no new
   dependencies.
+
+## Phase 04 — App shell (2026-10-03)
+
+### Task records
+
+- Date: 2026-10-03; tool/model: Codex (desktop agent).
+- Standing branch-creation permission from P03; branch `feat/p04-app-shell` created from
+  `main` via the single allowed `git switch -c`.
+- P4.1 — Full baseline route map in `src/app/router.tsx` (30 routes, React.lazy modules,
+  per-route `RouteErrorBoundary` reset by pathname key, `StubPage` for P06–P10 screens);
+  `AuthBoundary` keeps the MUI deep-link `from` state; `NotFoundPage` mirrors MUI copy.
+- P4.2 — `AppShell` + `src/layout/` (Sidebar full/rail/overlay on CSS bands with one
+  matchMedia subscription, remembered desktop collapse; Header; AppBreadcrumbs from
+  copied `buildBreadcrumbs`; PageHeader; SkipLink; DataStatusBar with per-collection
+  Retry). No `innerWidth` loops; one sidebar instance rendered per band.
+- P4.3 — `LoginPage` (identical validation messages, demo prefill, 800 ms submit,
+  remember, return-to-`from`), notification/user popovers over live store data,
+  `ThemeSwitcher` reuse, Radix Dialog command palette (Cmd/Ctrl+K, pages + 4 collections
+  × 5, arrows/Enter/Esc with focus restore). No cmdk install (DEV-05).
+- Verification: `npm run verify` green (3 lint errors fixed without rule suppression);
+  dev-server smoke 6/6 routes 200; lazy chunks confirmed in `dist/assets`.
+  Manual responsive/keyboard/sign-in checks left for owner.
+- Limitation: stub screens until their phases; notifications/settings routes resolve to
+  stubs; no new dependencies.
