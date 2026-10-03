@@ -4,6 +4,7 @@ One row per route/screen group, behavior, shared composition, and cross-cutting 
 
 | ID | MUI source | shadcn target | Components / libraries | Effort | Phase | Status |
 |---|---|---|---|---:|---|---|
+| INFRA-01 | `vite.config.ts`, `package.json`, `tsconfig.app.json` | strict Vite/Tailwind v4/shadcn scaffold and common quality gate | React, Vite, TypeScript, ESLint, Prettier | M | P01 | done |
 | CORE-01 | `src/domain/**`, `src/data/**` | byte-identical domain, seeds, data state | copied modules, React context | L | P03 | todo |
 | CORE-02 | `src/hooks/useTableControls.ts`, `useTabParam.ts` | same URL table/tab state | React Router hooks | M | P03 | todo |
 | SHELL-01 | `src/app/router.tsx`, `components/layout/*` | guarded SPA, lazy routes, responsive shell | React Router, Sidebar, Sheet, ErrorBoundary | L | P04 | todo |

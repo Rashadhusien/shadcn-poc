@@ -36,18 +36,18 @@ Phase gate: documentation reviewed; no `npm run verify` is defined until P01; no
 
 ## Phase 01: Scaffold and tooling
 
-Branch: `chore/p01-scaffold-tooling` | Depends on: P00 approval | Estimate: 5 h | Status: todo
+Branch: `chore/p01-scaffold-tooling` | Depends on: P00 approval | Estimate: 5 h | Status: done
 
 Goal: create a strict empty SPA, shadcn/Tailwind v4 setup, lint, token-literal check and verify command.
 
-- [ ] P1.1 Vite + React + strict TS (`noUncheckedIndexedAccess`) + `@/` alias and feature folders. MUI source: `vite.config.ts`, `tsconfig.app.json`. Kendo lesson: jsx-a11y/ESLint compatibility. shadcn: Vite, Tailwind v4, shadcn CLI. Acceptance: app starts and builds; CLI-generated components are locally owned. Files: `package.json`, `vite.config.ts`, `tsconfig*.json`, `index.html`, `src/main.tsx`, `src/app/App.tsx`, `src/**/.gitkeep`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P1.2 ESLint/Prettier including TypeScript, hooks, jsx-a11y and Tailwind class sorter; choose compatible ESLint major. MUI source: `eslint.config.js`, `.prettierrc`. Kendo lesson: record peer conflict if any. shadcn: dev tooling. Acceptance: lint/format scripts work. Files: `eslint.config.js`, `.prettierrc`, `.prettierignore`, `package.json`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P1.3 Complete ignore rules and add verify scripts/token-literal scanner. MUI source: `package.json`, `.gitignore`. Kendo lesson: one gate; protect secrets and license/env files. shadcn: `check-tokens.mjs`. Acceptance: verify = lint + tsc + build + token check; `.handoff/`, license/env patterns ignored. Files: `package.json`, `scripts/check-tokens.mjs`, `.gitignore`, `DEPENDENCIES.md`.
-  - [ ] AI_USAGE_LOG.md updated
+- [x] P1.1 Vite + React + strict TS (`noUncheckedIndexedAccess`) + `@/` alias and feature folders. MUI source: `vite.config.ts`, `tsconfig.app.json`. Kendo lesson: jsx-a11y/ESLint compatibility. shadcn: Vite, Tailwind v4, shadcn CLI. Acceptance: app starts and builds; locally owned component generation is configured. Files: `package.json`, `vite.config.ts`, `tsconfig*.json`, `index.html`, `src/main.tsx`, `src/app/App.tsx`, `components.json`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P1.2 ESLint/Prettier including TypeScript, hooks, jsx-a11y and Tailwind class sorter; choose compatible ESLint major. MUI source: `eslint.config.js`, `.prettierrc`. Kendo lesson: record peer conflict if any. shadcn: dev tooling. Acceptance: lint/format scripts work. Files: `eslint.config.js`, `.prettierrc`, `.prettierignore`, `package.json`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P1.3 Complete ignore rules and add verify scripts/token-literal scanner. MUI source: `package.json`, `.gitignore`. Kendo lesson: one gate; protect secrets and license/env files. shadcn: `check-tokens.mjs`. Acceptance: verify = lint + tsc + build + token check; `.handoff/`, license/env patterns ignored. Files: `package.json`, `scripts/check-tokens.mjs`, `.gitignore`, `DEPENDENCIES.md`.
+  - [x] AI_USAGE_LOG.md updated
 
-Phase gate: verify passes; dependency metadata/approval complete; parity/evidence updated; manual checks: dev server, empty route, verify and ignore patterns.
+Phase gate: verify passes; dependency metadata approved; parity/evidence updated; manual checks: dev server, empty route, verify and ignore patterns.
 
 ## Phase 02: Diagnostix theme
 

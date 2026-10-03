@@ -1,8 +1,8 @@
-# Planned dependencies — approval required at Gate 0
+# Approved dependency matrix — Gate 0
 
-This is a proposal only. No dependency was installed in Phase 0. The project uses no second UI kit. Only MIT, Apache-2.0, ISC, or BSD licenses are acceptable. Before P01 installs anything, verify exact pinned version, license, latest release date, last-week npm downloads, repository/maintenance status, why needed, and rejected alternative with `npm view` plus npm downloads metadata. Recheck in `docs/LICENSING_REVIEW.md` at P12. `shadcn` CLI is invoked with `npx`/`npm exec` for locally owned source generation; it is not a runtime component library.
+The owner approved the exact matrix on 2026-10-03, including an explicit OFL-1.1 exception for the two self-hosted font packages. Read-only npm metadata was retrieved on 2026-10-03; weekly download counts cover 2026-09-25 through 2026-10-01. Use the exact package pins in the authoritative matrix below. Recheck in `docs/LICENSING_REVIEW.md` at P12. `shadcn` CLI is used for locally owned source generation; it is not a runtime component library.
 
-**Registry access limitation:** npm uses `only-if-cached` in this environment; `npm view @tanstack/react-table@latest version license time --json` returned `ENOTCACHED`. React 19.3.0 (MIT) and Tailwind CSS 4.3.3 (MIT) were visible from the npm registry web endpoint, but publication timestamps/download counts could not be retrieved. Do not treat any other values as verified. Exact version, license, last-release date and weekly-download cells are intentionally marked `[NEEDS VERIFICATION]`; dependency approval is not complete until all rows are populated and the owner approves.
+**Approval status: approved.** The owner accepted the full matrix, including the OFL-1.1 font-license exception. The first package table below is a planning-scope summary; exact package pins and metadata are in the authoritative matrix that follows.
 
 | Package | Exact planned version | License | Latest release date | Weekly downloads | Why needed / alternative considered | Phase |
 |---|---|---|---|---|---|---|
@@ -28,9 +28,66 @@ This is a proposal only. No dependency was installed in Phase 0. The project use
 | `prettier`, `prettier-plugin-tailwindcss` | `[NEEDS VERIFICATION]` each | `[NEEDS VERIFICATION]` each | `[NEEDS VERIFICATION]` each | `[NEEDS VERIFICATION]` each | Format code and canonicalize Tailwind classes; alternative: no class-order enforcement. | P01 |
 | `@types/node`, `@types/react`, `@types/react-dom` | `[NEEDS VERIFICATION]` each | `[NEEDS VERIFICATION]` each | `[NEEDS VERIFICATION]` each | `[NEEDS VERIFICATION]` each | TypeScript compiler declarations; alternatives: none suitable. | P01 |
 
-### P01/P05 verification record
+### Verified package matrix — 2026-10-03
 
-Fill one metadata row per direct dependency and per Radix package actually generated. Capture `npm view <name>@<version> version license time --json`, `npm view <name> time --json` (latest tag date), and `https://api.npmjs.org/downloads/point/last-week/<encoded-package>`. Record whether the package is actively maintained from its official repository/release history. Keep full evidence in `docs/LICENSING_REVIEW.md`; never substitute a parent package's license for the installed package's license.
+Weekly download period: 2026-09-25 to 2026-10-01. Exact version publication dates were read from npm metadata. “Recent” means a release in the last 12 months. Stale-release packages below have an official repository active/unarchived check where noted; a few stable packages still need a final maintenance check. Package versions are exact pins.
+
+| Package | Exact pin | License | Release date | Downloads / week | Purpose; alternative considered | Phase / maintenance |
+|---|---|---|---|---:|---|---|
+| `react` | 19.3.0 | MIT | 2026-09-09 | 218,142,744 | SPA runtime; same framework as baselines | P01 recent |
+| `react-dom` | 19.3.0 | MIT | 2026-09-09 | 205,683,116 | React DOM renderer | P01 recent |
+| `react-router-dom` | 7.18.4 | MIT | 2026-09-15 | 55,054,243 | Route model and URL state; alternative router rejected for parity | P01 recent |
+| `vite` | 8.3.2 | MIT | 2026-10-01 | 225,080,956 | Requested SPA builder; alternative SSR rejected | P01 recent |
+| `typescript` | 6.0.3 | Apache-2.0 | 2026-04-16 | 354,808,929 | TS strict; 7.0.2 is outside typescript-eslint's supported `<6.1` range | P01 recent |
+| `@vitejs/plugin-react` | 6.1.1 | MIT | 2026-08-28 | 113,385,850 | React integration for Vite | P01 recent |
+| `tailwindcss` | 4.3.3 | MIT | 2026-07-16 | 158,877,679 | Requested utility CSS; no second UI kit | P01 recent |
+| `@tailwindcss/vite` | 4.3.3 | MIT | 2026-07-16 | 59,163,590 | Official Tailwind v4 Vite plugin; PostCSS alternative rejected | P01 recent |
+| `shadcn` | 4.21.1 | MIT | 2026-10-01 | 12,774,625 | Generate locally owned components; manual primitive implementation alternative | P01/P05 recent |
+| `@radix-ui/react-alert-dialog` | 1.1.23 | MIT | 2026-07-24 | 57,440,814 | Accessible destructive confirmation primitive | P05 recent |
+| `@radix-ui/react-checkbox` | 1.3.11 | MIT | 2026-07-24 | 63,431,541 | Accessible table/form selection; hand-built ARIA alternative | P05 recent |
+| `@radix-ui/react-collapsible` | 1.1.20 | MIT | 2026-07-24 | 64,886,054 | Accessible sidebar/disclosure control | P05 recent |
+| `@radix-ui/react-dialog` | 1.1.23 | MIT | 2026-07-24 | 89,251,464 | Dialog, sheet and command palette base | P04/P05 recent |
+| `@radix-ui/react-dropdown-menu` | 2.1.24 | MIT | 2026-07-24 | 70,236,198 | Accessible action menus; custom menu alternative | P05 recent |
+| `@radix-ui/react-label` | 2.1.15 | MIT | 2026-07-24 | 68,211,870 | Control labels; native label alternative | P05 recent |
+| `@radix-ui/react-popover` | 1.1.23 | MIT | 2026-07-24 | 70,093,078 | Calendar and filter popover base | P05 recent |
+| `@radix-ui/react-select` | 2.3.7 | MIT | 2026-07-24 | 68,420,716 | Themed select; native OS popup alternative rejected | P05 recent |
+| `@radix-ui/react-separator` | 1.1.15 | MIT | 2026-07-24 | 67,738,677 | Sidebar and menu divider semantics | P05 recent |
+| `@radix-ui/react-slot` | 1.3.3 | MIT | 2026-07-24 | 216,415,984 | shadcn polymorphic button/slot primitive | P05 recent |
+| `@radix-ui/react-switch` | 1.3.7 | MIT | 2026-07-24 | 62,814,219 | Settings switches | P05 recent |
+| `@radix-ui/react-tabs` | 1.1.21 | MIT | 2026-07-24 | 73,561,293 | URL-backed page/detail tabs | P05 recent |
+| `@radix-ui/react-tooltip` | 1.2.16 | MIT | 2026-07-24 | 69,850,578 | Accessible hover/focus tooltip | P05 recent |
+| `class-variance-authority` | 0.7.1 | Apache-2.0 | 2024-11-26 | 81,207,006 | shadcn class variants; handwritten variants alternative. Repo active/unarchived, pushed 2026-10-03 | P01 older package release |
+| `clsx` | 2.1.1 | MIT | 2024-04-23 | 152,047,631 | Conditional class composition; string concatenation alternative. Repo unarchived, last pushed 2024-06-10 | P01 older stable release; low update recency |
+| `tailwind-merge` | 3.7.0 | MIT | 2026-09-12 | 104,097,229 | Resolve conflicting utility classes | P01 recent |
+| `@tanstack/react-table` | 9.2.4 | MIT | 2026-08-28 | 26,046,809 | Sorting/page/select/visibility; bespoke grid alternative | P05 recent |
+| `recharts` | 3.10.1 | MIT | 2026-07-25 | 69,619,240 | shadcn chart pattern; MUI X Charts alternative for library parity | P05 recent |
+| `lucide-react` | 1.51.0 | ISC | 2026-10-03 | 131,769,853 | One icon family; mixed kits rejected | P04 recent |
+| `sonner` | 2.0.8 | MIT | 2026-08-09 | 62,144,461 | Toasts; custom toaster alternative | P05 recent |
+| `cmdk` | 1.1.1 | MIT | 2025-03-14 | 53,655,935 | shadcn Command; custom filtered dialog alternative. Repo active/unarchived, pushed 2025-10-29 | P04 older release |
+| `react-hook-form` | 7.89.0 | MIT | 2026-09-26 | 69,090,162 | Accessible form state; per-page local state alternative rejected | P05/P09 recent |
+| `zod` | 4.6.5 | MIT | 2026-09-13 | 373,908,324 | Runtime schema validation; handwritten validators alternative rejected | P05/P09 recent |
+| `@hookform/resolvers` | 5.9.1 | MIT | 2026-08-17 | 57,711,024 | RHF/Zod bridge | P05/P09 recent |
+| `react-day-picker` | 10.0.2 | MIT | 2026-09-30 | 54,489,248 | shadcn Calendar; native date popup alternative rejected | P05/P10 recent |
+| `date-fns` | 4.4.0 | MIT | 2026-05-29 | 120,484,994 | Date formatting/calendar utilities | P05/P10 recent |
+| `@dnd-kit/core` | 6.3.1 | MIT | 2024-12-05 | 32,482,661 | Workflow pointer-drag enhancement; keyboard Move to is complete path. Repo active/unarchived, pushed 2026-09-12 | P10 older package release |
+| `@dnd-kit/sortable` | 10.0.0 | MIT | 2024-12-04 | 31,450,146 | Board lane/card sorting; same accessible menu alternative | P10 older package release |
+| `@dnd-kit/utilities` | 3.2.2 | MIT | 2023-11-06 | 32,432,799 | dnd-kit transforms/helpers. Repo active/unarchived, pushed 2026-09-12 | P10 older package release |
+| `react-odontogram` | 0.6.0 | MIT | 2026-09-08 | 21,627 | Read-only tooth chart matching MUI; custom dental SVG alternative if rejected. Repo active/unarchived, pushed 2026-09-08 | P08/P09 recent; check embedded assets |
+| `@fontsource/dm-sans` | 5.3.0 | **OFL-1.1** | 2026-07-19 | 572,733 | Self-hosted body font; owner approved exception | P02 approved exception |
+| `@fontsource/ibm-plex-mono` | 5.3.0 | **OFL-1.1** | 2026-07-19 | 2,638,064 | Self-hosted mono font; owner approved exception | P02 approved exception |
+| `eslint` | 9.39.5 | MIT | 2026-07-10 | 193,336,881 | ESLint 10 rejected: jsx-a11y peer range ends at 9 | P01 recent |
+| `@eslint/js` | 9.39.5 | MIT | 2026-07-10 | 171,902,358 | Match ESLint 9 config major | P01 recent |
+| `typescript-eslint` | 8.71.0 | MIT | 2026-09-28 | 108,953,857 | TS lint; supports TS `>=4.8.4 <6.1.0` | P01 recent |
+| `eslint-plugin-react-hooks` | 7.1.1 | MIT | 2026-04-17 | 117,759,257 | React Hooks lint | P01 recent |
+| `eslint-plugin-jsx-a11y` | 6.10.2 | MIT | 2024-10-26 | 57,895,667 | Accessibility lint; peer supports ESLint through 9. Repo active/unarchived, pushed 2026-01-06 | P01 older release |
+| `globals` | 17.13.0 | MIT | 2026-10-01 | 320,588,437 | ESLint global environment definitions | P01 recent |
+| `prettier` | 3.9.9 | MIT | 2026-09-23 | 165,273,649 | Formatter | P01 recent |
+| `prettier-plugin-tailwindcss` | 0.8.1 | MIT | 2026-07-15 | 11,375,828 | Sort utility classes | P01 recent |
+| `@types/node` | 22.20.5 | MIT | 2026-10-01 | 535,387,792 | Node 22 declarations to match runtime | P01 recent |
+| `@types/react` | 19.3.0 | MIT | 2026-09-09 | 199,812,361 | React 19 declarations | P01 recent |
+| `@types/react-dom` | 19.3.0 | MIT | 2026-09-09 | 171,309,570 | React DOM 19 declarations | P01 recent |
+
+The exact version license/date results came from `npm view <name>@<version> version license --json` and `npm view <name>@<version> time --json`; downloads came from npm's `downloads/point/last-week` API. GitHub archive/last-push checks were made for listed older packages with repository dates. Recent-release packages use their release date as the maintenance signal. This direct-dependency review does not claim every transitive dependency has been individually audited.
 
 ### Approval
 
