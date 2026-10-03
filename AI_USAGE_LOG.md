@@ -63,3 +63,25 @@ Factual record of AI-assisted work. Do not include credentials, tokens, or patie
 - Verification: `npm run verify` (see Phase 02 evidence entry). Manual browser checks
   (light/dark/system + OS change + all overlays at 360–1536) not performed; left for owner.
 - Limitation: no new font packages installed (approval required); no app code beyond P02 scope.
+
+## Phase 03 — Domain and data (2026-10-03)
+
+### Task records
+
+- Date: 2026-10-03; tool/model: Codex (desktop agent).
+- Owner granted branch-creation permission; branch `feat/p03-domain-data` created from
+  `main` via the single allowed `git switch -c` per GIT_WORKFLOW.md.
+- P3.1 — Copied 43 framework-neutral files byte-for-byte from `../mui/src` (domain 19,
+  data 18 incl. 13 seeds, lib/download, 2 hooks, app auth/routes/breadcrumbs). All
+  imports are relative or `@/`-aliased, so no path rewrites were needed. Hash manifest in
+  `docs/COPY_MANIFEST.md`: 39/43 identical.
+- P3.2 — Added `scripts/check-seed.mjs`: 13/13 seed hashes match; wired into
+  `npm run verify` as `check:seed`. Four type-only `noUncheckedIndexedAccess` patches
+  (P03-A–E) documented in the manifest; `npm run typecheck` clean.
+- P3.3 — Restored provider state: `src/data/AppDataProvider.tsx` (copied identical) plus
+  new `src/app/AppProviders.tsx` composition wired into `src/main.tsx`. `?sim=` simulation
+  lives in copied `src/data/api.ts` and behaves exactly as MUI; sim matrix recorded in
+  `docs/EVIDENCE_CHECKLIST.md` as owner-manual.
+- Verification: `npm run verify` (see Phase 03 evidence entry). No browser run performed.
+- Limitation: no UI code; hooks/provider unwired to screens until P04–P06; no new
+  dependencies.

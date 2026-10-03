@@ -68,16 +68,16 @@ Phase gate: verify and contrast pass; manual light/dark/system + OS change + all
 
 ## Phase 03: Domain and data
 
-Branch: `feat/p03-domain-data` | Depends on: P01 | Estimate: 5 h | Status: todo
+Branch: `feat/p03-domain-data` | Depends on: P01 | Estimate: 5 h | Status: done (verify green incl. seed check; manual sim checks pending owner)
 
 Goal: reproduce the MUI model and deterministic data behavior from copied sources.
 
-- [ ] P3.1 Copy neutral source roots and produce source/destination hash manifest. MUI source: `src/domain/**`, `src/data/**`, `src/lib/download.ts`, named hooks/app utilities. Kendo lesson: distinguish used from installed. shadcn: no UI code. Acceptance: all copies listed and seeds identical. Files: `src/domain/**`, `src/data/**`, `src/lib/download.ts`, `src/hooks/useTableControls.ts`, `src/hooks/useTabParam.ts`, `src/app/{auth,routes,breadcrumbs}.ts`, `docs/COPY_MANIFEST.md`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P3.2 Add seed identity check and only documented TS compatibility edits. MUI source: copied data and rules. Kendo lesson: review source/destination facts. shadcn: scripts. Acceptance: 13/13 seed hashes match; all patches are isolated and behavior-preserving. Files: `scripts/check-seed.mjs`, copied `src/domain/**`, `src/data/**`, `docs/COPY_MANIFEST.md`.
-  - [ ] AI_USAGE_LOG.md updated
-- [ ] P3.3 Restore provider and simulation state. MUI source: `src/data/AppDataProvider.tsx`, reducers/repositories. Kendo lesson: every surface has reachable test states. shadcn: React context. Acceptance: all documented `?sim=` modes match baseline. Files: `src/data/AppDataProvider.tsx`, `src/app/AppProviders.tsx`, `docs/EVIDENCE_CHECKLIST.md`.
-  - [ ] AI_USAGE_LOG.md updated
+- [x] P3.1 Copy neutral source roots and produce source/destination hash manifest. MUI source: `src/domain/**`, `src/data/**`, `src/lib/download.ts`, named hooks/app utilities. Kendo lesson: distinguish used from installed. shadcn: no UI code. Acceptance: all copies listed and seeds identical. Files: `src/domain/**`, `src/data/**`, `src/lib/download.ts`, `src/hooks/useTableControls.ts`, `src/hooks/useTabParam.ts`, `src/app/{auth,routes,breadcrumbs}.ts`, `docs/COPY_MANIFEST.md`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P3.2 Add seed identity check and only documented TS compatibility edits. MUI source: copied data and rules. Kendo lesson: review source/destination facts. shadcn: scripts. Acceptance: 13/13 seed hashes match; all patches are isolated and behavior-preserving. Files: `scripts/check-seed.mjs`, copied `src/domain/**`, `src/data/**`, `docs/COPY_MANIFEST.md`.
+  - [x] AI_USAGE_LOG.md updated
+- [x] P3.3 Restore provider and simulation state. MUI source: `src/data/AppDataProvider.tsx`, reducers/repositories. Kendo lesson: every surface has reachable test states. shadcn: React context. Acceptance: all documented `?sim=` modes match baseline. Files: `src/data/AppDataProvider.tsx`, `src/app/AppProviders.tsx`, `docs/EVIDENCE_CHECKLIST.md`.
+  - [x] AI_USAGE_LOG.md updated
 
 Phase gate: verify, seed check and parity; manual normal/loading/empty/error simulation.
 

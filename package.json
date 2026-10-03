@@ -11,9 +11,10 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit -p tsconfig.app.json && tsc --noEmit -p tsconfig.node.json",
     "check:tokens": "node scripts/check-tokens.mjs",
+    "check:seed": "node scripts/check-seed.mjs",
     "theme:build": "node scripts/build-theme-css.mjs",
     "contrast": "node scripts/contrast.mjs",
-    "verify": "npm run lint && npm run typecheck && npm run build && npm run check:tokens && npm run contrast",
+    "verify": "npm run lint && npm run typecheck && npm run build && npm run check:tokens && npm run check:seed && npm run contrast",
     "format": "prettier --write eslint.config.js .prettierrc package.json components.json vite.config.ts tsconfig*.json index.html \"src/**/*.{ts,tsx,css,json}\" \"scripts/**/*.mjs\"",
     "format:check": "prettier --check eslint.config.js .prettierrc package.json components.json vite.config.ts tsconfig*.json index.html \"src/**/*.{ts,tsx,css,json}\" \"scripts/**/*.mjs\""
   },

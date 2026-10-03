@@ -17,6 +17,11 @@ Record build/hash, viewport, theme, keyboard/mouse path, expected behavior, obse
 - [x] Token source, generated CSS and contrast report updated to Royal Navy / Opal (static gates pass).
 - [ ] Owner manually reviews `/dev/theme-check` in light/dark/system + OS change, opens every overlay (dialog, popover, select, toast), and sweeps 360/768/1024/1536 with no page overflow.
 
+## Phase 03
+
+- [x] Seed identity: `npm run check:seed` reports 13/13 files identical to `../mui/src/data/seed`.
+- [ ] Owner manually loads `/dev/theme-check` with `?sim=loading` (collections never resolve), `?sim=error` (all collections fail with Retry), `?sim=empty` (all collections empty), and `?sim=error&simTarget=orders` (only orders fail); reload restores normal state.
+
 ## Future phases
 
 - [ ] P01: start the Vite app, inspect the Diagnostix placeholder at 360, 768, 1024 and 1536 px; confirm no page overflow and verify `.handoff/`, `.env*`, and license files are ignored.

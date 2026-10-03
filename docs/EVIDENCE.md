@@ -50,3 +50,31 @@ Append a dated phase entry with facts only: files and approximate LOC changed; c
 - Workarounds: supplied boundary/sidebar/focus/warning values adjusted for gates
   (DEV-02); hue references repointed after owner overrode the brass direction (DEV-01).
 - Unverified: visual review of the navy theme in browser, both modes and all portals.
+
+## Phase 03 — Domain and data (2026-10-03)
+
+- Branch `feat/p03-domain-data`, based on `main` at P02 commit.
+- Files copied byte-for-byte from `../mui/src` (43 total, `@/` paths work unchanged):
+  `src/domain/**` (19 .ts: models, catalog, status, priority, notifications, formatters,
+  13 rule modules), `src/data/**` (api, context, reducer, AppDataProvider, fixtures,
+  13 seed JSONs), `src/lib/download.ts`, `src/hooks/useTableControls.ts`,
+  `src/hooks/useTabParam.ts`, `src/app/auth.ts`, `src/app/routes.ts`,
+  `src/app/breadcrumbs.ts`. No MUI JSX translated.
+- 39/43 files byte-identical; 4 type-only `noUncheckedIndexedAccess` patches (P03-A–E in
+  `docs/COPY_MANIFEST.md`): parallel-array guards in order-creation, service/month-label
+  guards in reporting, details lookup guard in app-data-reducer, empty-tabs throw in
+  useTabParam. All behavior-preserving (guards never trigger at runtime).
+- New: `scripts/check-seed.mjs` (13/13 seed hashes match; wired into `npm run verify`
+  via `check:seed`), `src/app/AppProviders.tsx` (AppDataProvider composition, wired into
+  `src/main.tsx` so `?sim=loading|error|empty` + `&simTarget=` work in dev exactly as MUI).
+- Custom components: none. Libraries: none added (react + react-router-dom already approved).
+- Config steps: added `check:seed` script; no dependency changes.
+- Commands/results: `npm run verify` passed — ESLint clean; `tsc` app+node clean (11
+  strict-index errors fixed by P03-A–E); Vite build green (JS 609.56 kB / gzip 158.59 kB —
+  seed JSONs now bundled, chunk >500 kB warning noted for P11 route-splitting work; CSS
+  41.30 kB / gzip 7.70 kB); token scanner clean; seed check
+  13/13; contrast 110/110 unchanged. First verify run flagged a stale DESIGN_TOKENS.md
+  (line endings); regenerated with `npm run contrast -- --write`, second run fully green.
+- Screenshots/manual checks: not performed (`?sim=` mode matrix left for owner per
+  `docs/EVIDENCE_CHECKLIST.md`).
+- Unverified: runtime data loading in browser (provider now mounted in dev).
